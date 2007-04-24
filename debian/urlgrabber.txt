@@ -1,0 +1,150 @@
+URLGRABBER(1)
+=============
+
+NAME
+----
+urlgrabber - a high-level cross-protocol url-grabber.
+
+SYNOPSIS
+--------
+'urlgrabber' [OPTIONS] URL [FILE]
+
+DESCRIPTION
+-----------
+urlgrabber is a binary program and python module for fetching files. It is
+designed to be used in programs that need common (but not necessarily simple)
+url-fetching features.
+
+OPTIONS
+-------
+--help, -h::
+  help page specifying available options to the binary program.
+
+--copy-local::
+  ignored except for file:// urls, in which case
+  it specifies whether urlgrab should still make
+  a copy of the file, or simply point to the
+  existing copy.
+
+--throttle=NUMBER::
+  if it's an int, it's the bytes/second throttle
+  limit.  If it's a float, it is first multiplied
+  by bandwidth.  If throttle == 0, throttling is
+  disabled.  If None, the module-level default
+  (which can be set with set_throttle) is used.
+
+--bandwidth=NUMBER::
+  the nominal max bandwidth in bytes/second.  If
+  throttle is a float and bandwidth == 0,
+  throttling is disabled.  If None, the
+  module-level default (which can be set with
+  set_bandwidth) is used.
+
+--range=RANGE::
+  a tuple of the form first_byte,last_byte
+  describing a byte range to retrieve. Either or
+  both of the values may be specified.  If
+  first_byte is None, byte offset 0 is assumed.
+  If last_byte is None, the last byte available
+  is assumed. Note that both first and last_byte
+  values are inclusive so a range of (10,11)
+  would return the 10th and 11th bytes of the
+  resource.
+
+--user-agent=STR::
+  the user-agent string provide if the url is HTTP.
+
+--retry=NUMBER::
+  the number of times to retry the grab before
+  bailing.  If this is zero, it will retry
+  forever. This was intentional... really, it was
+  :). If this value is not supplied or is supplied
+  but is None retrying does not occur.
+
+--retrycodes::
+  a sequence of errorcodes (values of e.errno) for
+  which it should retry. See the doc on
+  URLGrabError for more details on this. retrycodes
+  defaults to -1,2,4,5,6,7 if not specified
+  explicitly.
+
+
+MODULE USE EXAMPLES
+-------------------
+In its simplest form, urlgrabber can be a replacement for urllib2's
+open, or even python's file if you're just reading:
+..................................
+  from urlgrabber import urlopen
+  fo = urlopen(url)
+  data = fo.read()
+  fo.close()
+..................................
+
+Here, the url can be http, https, ftp, or file. It's also pretty smart
+so if you just give it something like /tmp/foo, it will
+figure it out. For even more fun, you can also do:
+
+..................................
+  from urlgrabber import urlopen
+  local_filename = urlgrab(url)  # grab a local copy of the file
+  data = urlread(url)            # just read the data into a string
+..................................
+
+Now, like urllib2, what's really happening here is that you're using a
+module-level object (called a grabber) that kind of serves as a
+default. That's just fine, but you might want to get your own private
+version for a couple of reasons:
+
+..................................
+* it's a little ugly to modify the default grabber because you have to
+  reach into the module to do it
+* you could run into conflicts if different parts of the code
+  modify the default grabber and therefore expect different
+  behavior
+..................................
+
+Therefore, you're probably better off making your own. This also gives
+you lots of flexibility for later, as you'll see:
+
+..................................
+  from urlgrabber.grabber import URLGrabber
+  g = URLGrabber()
+  data = g.urlread(url)
+..................................
+
+This is nice because you can specify options when you create the
+grabber. For example, let's turn on simple reget mode so that if we
+have part of a file, we only need to fetch the rest:
+
+..................................
+  from urlgrabber.grabber import URLGrabber
+  g = URLGrabber(reget='simple')
+  local_filename = g.urlgrab(url)
+..................................
+
+The available options are listed in the module documentation, and can
+usually be specified as a default at the grabber-level or as options
+to the method:
+
+  from urlgrabber.grabber import URLGrabber
+  g = URLGrabber(reget='simple')
+  local_filename = g.urlgrab(url, filename=None, reget=None)
+
+
+AUTHORS
+-------
+Written by:
+Michael D. Stenner <mstenner@linux.duke.edu>
+Ryan Tomayko <rtomayko@naeblis.cx>
+
+This manual page was written by Kevin Coyner <kevin@rustybear.com> for
+the Debian system (but may be used by others). It borrows heavily on
+the documentation included in the urlgrabber module. Permission is granted
+to copy,  distribute  and/or modify this document under the terms of
+the GNU General Public License, Version 2 any later version published
+by the Free Software Foundation.
+
+
+RESOURCES
+---------
+Main web site: http://linux.duke.edu/projects/urlgrabber/[]

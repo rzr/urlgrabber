@@ -1,0 +1,58 @@
+urlgrabber (3.1.0-3) unstable; urgency=low
+
+  * debian/control: Added python modules packaging team to uploaders and added
+    VCS fields.
+
+ -- Kevin Coyner <kevin@rustybear.com>  Mon, 09 Apr 2007 19:27:36 -0600
+
+urlgrabber (3.1.0-2) unstable; urgency=low
+
+  * debian/control: Changed "Architecture: any" to all.
+
+ -- Kevin Coyner <kevin@rustybear.com>  Mon, 09 Apr 2007 15:20:02 -0600
+
+urlgrabber (3.1.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * New maintainer. (Closes: #418095)
+  * Added man page.
+  * Cleaned up cruft in debian/rules.
+  * Rewrote debian/copyright.
+  * Cleaned up debian/control and added homepage.
+  * Added debian/README.Debian.
+  * Added debian/postinst to clean up unneeded docs that were inappropriately
+    added in previous versions.
+  * Removed unneeded debian/pycompat file.
+
+ -- Kevin Coyner <kevin@rustybear.com>  Fri, 06 Apr 2007 22:27:03 -0400
+
+urlgrabber (2.9.9-1) unstable; urgency=low
+
+  * New upstream release
+  * Apply Ana Beatriz Guerrero Lopez's patch to
+    * Update to new Python policy (Closes: #373402)
+    * Switch to standards version 3.7.2
+    * Update to debhelper compat level 5
+  * Thanks Ana!
+
+ -- Anand Kumria <wildfire@progsoc.org>  Thu,  6 Jul 2006 09:16:37 +1000
+
+urlgrabber (2.9.7-2) unstable; urgency=low
+
+  * When I imported urlgrabber into bzr, I somehow lost a Build-Dep: on
+    python. Re-adding it so I can (Closes: #335340)
+
+ -- Anand Kumria <wildfire@progsoc.org>  Sat, 31 Dec 2005 15:34:22 +1100
+
+urlgrabber (2.9.7-1) unstable; urgency=low
+
+  * New upstream release (Closes: #344934)
+
+ -- Anand Kumria <wildfire@progsoc.org>  Sat, 31 Dec 2005 15:34:22 +1100
+
+urlgrabber (2.9.6-1) unstable; urgency=low
+
+  * Initial release (Closes: #312698)
+
+ -- Anand Kumria <wildfire@progsoc.org>  Sun,  9 Oct 2005 13:06:55 +1000
+
