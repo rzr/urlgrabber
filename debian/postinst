@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+
+if [ -d /usr/share/doc/urlgrabber-2.9.9 ]; then
+    rm -rf /usr/share/doc/urlgrabber-2.9.9
+fi
+
+if [ -d /usr/share/doc/urlgrabber-2.9.8 ]; then
+    rm -rf /usr/share/doc/urlgrabber-2.9.8
+fi
+
+if [ -d /usr/share/doc/urlgrabber-2.9.7 ]; then
+    rm -rf /usr/share/doc/urlgrabber-2.9.7
+fi
+
+#DEBHELPER#

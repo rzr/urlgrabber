@@ -1,0 +1,27 @@
+Source: urlgrabber
+Section: python
+Priority: optional
+Maintainer: Kevin Coyner <kevin@rustybear.com>
+Uploaders: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 5), python-all-dev (>= 2.3.5-11), python-support (>= 0.6)
+Standards-Version: 3.7.2
+XS-Vcs-Svn: svn://svn.debian.org/python-modules/packages/urlgrabber/trunk/
+XS-Vcs-Browser: http://svn.debian.org/wsvn/python-modules/packages/urlgrabber/trunk/?op=log
+
+Package: python-urlgrabber
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}
+Provides: ${python:Provides}
+Description: A high-level cross-protocol url-grabber
+ urlgrabber dramatically simplifies the fetching of files. It is designed to
+ be used in programs that need common (but not necessarily simple)
+ url-fetching features. This package provides both a binary and a module, both
+ of the name urlgrabber.
+ .
+ It supports identical behavior for http://, ftp:// and file:/// URIs. It
+ provides HTTP keepalive, byte ranges, regets, progress meters, throttling,
+ retries, access to authenticated http/ftp servers, and proxies. Additionally
+ it has the ability to treat a list of mirrors as a single source and to
+ automatically switch mirrors if there is a failure.
+ .
+  Homepage: http://linux.duke.edu/projects/urlgrabber/
