@@ -3,7 +3,7 @@ Section: python
 Priority: optional
 Maintainer: Kevin Coyner <kcoyner@debian.org>
 Uploaders: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
-Build-Depends: debhelper (>= 5), python-all-dev (>= 2.3.5-11), python-support (>= 0.6), dpatch
+Build-Depends: debhelper (>= 5), python-all, python-support (>= 0.6), dpatch
 Standards-Version: 3.7.2
 Homepage: http://linux.duke.edu/projects/urlgrabber/
 Vcs-Svn: svn://svn.debian.org/python-modules/packages/urlgrabber/trunk/
