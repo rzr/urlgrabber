@@ -11,6 +11,7 @@ urlgrabber (3.1.0-5) UNRELEASED; urgency=low
   [ Jakub Wilk ]
   * Build-depend on python-all rather than python-all-dev.
   * Remove superfluous references to CFLAGS from debian/rules.
+  * Prepare for Python 2.6 transition (closes: #556161).
 
  -- Piotr Ożarowski <piotr@debian.org>  Sat,  6 Oct 2007 23:47:35 +0200
 
