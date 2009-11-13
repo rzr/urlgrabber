@@ -1,3 +1,15 @@
+urlgrabber (3.1.0-5) UNRELEASED; urgency=low
+
+  [ Piotr Ożarowski ]
+  * Homepage field added
+  * Rename XS-Vcs-* fields to Vcs-* (dpkg supports them now)
+
+  [ Sandro Tosi ]
+  * debian/control
+    - switch Vcs-Browser field to viewsvn
+
+ -- Piotr Ożarowski <piotr@debian.org>  Sat,  6 Oct 2007 23:47:35 +0200
+
 urlgrabber (3.1.0-4) unstable; urgency=low
 
   * Patch to have urlgrabber.keepalive.HTTPHandler use Request.get_method() to
