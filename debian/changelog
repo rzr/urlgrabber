@@ -1,15 +1,3 @@
-urlgrabber (3.1.0-4) UNRELEASED; urgency=low
-
-  [ Piotr Ożarowski ]
-  * Homepage field added
-  * Rename XS-Vcs-* fields to Vcs-* (dpkg supports them now)
-
-  [ Sandro Tosi ]
-  * debian/control
-    - switch Vcs-Browser field to viewsvn
-
- -- Piotr Ożarowski <piotr@debian.org>  Sat,  6 Oct 2007 23:47:35 +0200
-
 urlgrabber (3.1.0-3) unstable; urgency=low
 
   * debian/control: Added python modules packaging team to uploaders and added
