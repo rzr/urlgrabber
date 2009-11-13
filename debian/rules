@@ -55,7 +55,7 @@ install: build
 	dh_installdirs
 	# Add here commands to install the package into debian/urlgrabber.
 	for py in $(PYVERS); do \
-		$$py setup.py install --root=$(CURDIR)/debian/python-urlgrabber; \
+		$$py setup.py install --prefix=/usr --root=$(CURDIR)/debian/python-urlgrabber; \
 	done
 	# remove unneeded documents installed by setup.py
 	-rm -rf $(CURDIR)/debian/python-urlgrabber/usr/share/doc/urlgrabber-3*
