@@ -1,0 +1,40 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 001_keepalive.dpatch by Kevin Coyner <kcoyner@debian.org>
+##
+## DP: keepalive patch
+## DP: Original patch provided by Jakub Wilk <ubanus@users.sf.net>
+
+@DPATCH@
+diff -urNad urlgrabber-3.1.0~/urlgrabber/keepalive.py urlgrabber-3.1.0/urlgrabber/keepalive.py
+--- urlgrabber-3.1.0~/urlgrabber/keepalive.py	2006-09-21 20:58:05.000000000 -0400
++++ urlgrabber-3.1.0/urlgrabber/keepalive.py	2007-08-04 22:18:34.000000000 -0400
+@@ -302,16 +302,14 @@
+ 
+     def _start_transaction(self, h, req):
+         try:
++            h.putrequest(req.get_method(), req.get_selector())
+             if req.has_data():
+                 data = req.get_data()
+-                h.putrequest('POST', req.get_selector())
+                 if not req.headers.has_key('Content-type'):
+                     h.putheader('Content-type',
+                                 'application/x-www-form-urlencoded')
+                 if not req.headers.has_key('Content-length'):
+                     h.putheader('Content-length', '%d' % len(data))
+-            else:
+-                h.putrequest('GET', req.get_selector())
+         except (socket.error, httplib.HTTPException), err:
+             raise urllib2.URLError(err)
+ 
+@@ -371,9 +369,9 @@
+ 
+     def __init__(self, sock, debuglevel=0, strict=0, method=None):
+         if method: # the httplib in python 2.3 uses the method arg
+-            httplib.HTTPResponse.__init__(self, sock, debuglevel, method)
++            httplib.HTTPResponse.__init__(self, sock, debuglevel, strict, method)
+         else: # 2.2 doesn't
+-            httplib.HTTPResponse.__init__(self, sock, debuglevel)
++            httplib.HTTPResponse.__init__(self, sock, debuglevel, strict)
+         self.fileno = sock.fileno
+         self.code = None
+         self._rbuf = ''

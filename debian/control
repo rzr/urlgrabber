@@ -1,9 +1,9 @@
 Source: urlgrabber
 Section: python
 Priority: optional
-Maintainer: Kevin Coyner <kevin@rustybear.com>
+Maintainer: Kevin Coyner <kcoyner@debian.org>
 Uploaders: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
-Build-Depends: debhelper (>= 5), python-all-dev (>= 2.3.5-11), python-support (>= 0.6)
+Build-Depends: debhelper (>= 5), python-all-dev (>= 2.3.5-11), python-support (>= 0.6), dpatch
 Standards-Version: 3.7.2
 XS-Vcs-Svn: svn://svn.debian.org/python-modules/packages/urlgrabber/trunk/
 XS-Vcs-Browser: http://svn.debian.org/wsvn/python-modules/packages/urlgrabber/trunk/?op=log

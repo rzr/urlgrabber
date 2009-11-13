@@ -1,3 +1,13 @@
+urlgrabber (3.1.0-4) unstable; urgency=low
+
+  * Patch to have urlgrabber.keepalive.HTTPHandler use Request.get_method() to
+    determine the appropriate HTTP method. Thanks to Jakub Wilk.
+    Closes: #433724
+  * Changed maintainer e-mail to reflect new Debian account.
+  * Added dpatch as Build-Depends to debian/control.
+
+ -- Kevin Coyner <kcoyner@debian.org>  Sat, 04 Aug 2007 21:52:14 -0400
+
 urlgrabber (3.1.0-3) unstable; urgency=low
 
   * debian/control: Added python modules packaging team to uploaders and added

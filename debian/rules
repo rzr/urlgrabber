@@ -24,7 +24,7 @@ configure-stamp:
 	dh_testdir
 	touch configure-stamp
 
-build: build-stamp
+build: patch build-stamp
 
 build-stamp: configure-stamp
 	dh_testdir
@@ -34,7 +34,9 @@ build-stamp: configure-stamp
 	done
 	touch build-stamp
 
-clean:
+clean: clean-patched unpatch
+
+clean-patched:
 	dh_testdir
 	dh_testroot
 	-rm -f build-stamp configure-stamp
@@ -44,6 +46,15 @@ clean:
 	python setup.py clean
 	find $(CURDIR) -name "*.pyc" -exec rm -f '{}' \;
 	dh_clean
+
+patch: patch-stamp
+patch-stamp:
+	dpatch apply-all
+	dpatch cat-all >patch-stamp
+
+unpatch:
+	dpatch deapply-all
+	rm -rf patch-stamp debian/patched
 
 install: build
 	dh_testdir
