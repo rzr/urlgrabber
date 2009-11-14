@@ -6,8 +6,9 @@ It was downloaded from <http://linux.duke.edu/projects/urlgrabber/download/>
 Upstream Authors: Michael D. Stenner <mstenner@linux.duke.edu>
 	              Ryan Tomayko <rtomayko@naeblis.cx>
 
-Copyright: (c) 2002-2006 Michael D. Stenner
-	                     Ryan Tomayko
+
+Copyright: © 2002-2006 Michael D. Stenner
+                       Ryan Tomayko
 
 License:
 
@@ -28,5 +29,5 @@ License:
 On Debian systems, the complete text of the GNU Lesser General Public License
 can be found in `/usr/share/common-licenses/LGPL'.
 
-The Debian packaging is (C) 2007, Kevin Coyner <kcoyner@debian.org> and is
+The Debian packaging is © 2007, Kevin Coyner <kcoyner@debian.org> and is
 licensed under the GPL, see `/usr/share/common-licenses/GPL'.
