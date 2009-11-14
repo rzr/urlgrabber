@@ -27,7 +27,7 @@ License:
     Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
 On Debian systems, the complete text of the GNU Lesser General Public License
-can be found in `/usr/share/common-licenses/LGPL'.
+can be found in `/usr/share/common-licenses/LGPL-2.1'.
 
 The Debian packaging is © 2007, Kevin Coyner <kcoyner@debian.org> and is
 licensed under the GPL, see `/usr/share/common-licenses/GPL'.
