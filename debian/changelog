@@ -1,4 +1,4 @@
-urlgrabber (3.1.0-5) UNRELEASED; urgency=low
+urlgrabber (3.1.0-5) unstable; urgency=low
 
   [ Piotr Ożarowski ]
   * Homepage field added
