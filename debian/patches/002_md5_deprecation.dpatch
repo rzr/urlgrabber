@@ -1,0 +1,46 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 002_md5_deprecation.dpatch by Michael Bienia <geser@ubuntu.com>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Fix deprecation warning from python 2.6 about the md5 module
+
+@DPATCH@
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' urlgrabber-3.1.0~/urlgrabber/keepalive.py urlgrabber-3.1.0/urlgrabber/keepalive.py
+--- urlgrabber-3.1.0~/urlgrabber/keepalive.py	2010-06-21 13:43:49.000000000 +0200
++++ urlgrabber-3.1.0/urlgrabber/keepalive.py	2010-06-21 13:45:26.000000000 +0200
+@@ -485,7 +485,7 @@
+     keepalive_handler.close_all()
+ 
+ def continuity(url):
+-    import md5
++    from hashlib import md5
+     format = '%25s: %s'
+     
+     # first fetch the file with the normal http handler
+@@ -494,7 +494,7 @@
+     fo = urllib2.urlopen(url)
+     foo = fo.read()
+     fo.close()
+-    m = md5.new(foo)
++    m = md5(foo)
+     print format % ('normal urllib', m.hexdigest())
+ 
+     # now install the keepalive handler and try again
+@@ -504,7 +504,7 @@
+     fo = urllib2.urlopen(url)
+     foo = fo.read()
+     fo.close()
+-    m = md5.new(foo)
++    m = md5(foo)
+     print format % ('keepalive read', m.hexdigest())
+ 
+     fo = urllib2.urlopen(url)
+@@ -514,7 +514,7 @@
+         if f: foo = foo + f
+         else: break
+     fo.close()
+-    m = md5.new(foo)
++    m = md5(foo)
+     print format % ('keepalive readline', m.hexdigest())
+ 
+ def comp(N, url):

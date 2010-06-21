@@ -1,2 +1,2 @@
 version=3
-http://linux.duke.edu/projects/urlgrabber/download/urlgrabber-(.*)\.tar\.gz
+http://urlgrabber.baseurl.org/download/urlgrabber-(.*)\.tar\.gz
