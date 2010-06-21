@@ -4,9 +4,10 @@ urlgrabber (3.1.0-6) unstable; urgency=low
   * debian/patches/002_md5_deprecation.dpatch:
     Use hashlib instead of deprecated md5 functions. Thanks to Michael Bienia
     from Ubuntu (Closes: #517993)
+  * debian/{control,watch,copyright}:
+    - Update Homepage - upstream moved. (Closes: #586399)
   * debian/control:
     - No longer Provides ${python:Provides}
-    - Update Homepage - upstream moved (in watch too)
     - Set XS-Python-Version: >= 2.5 (as required by the hashlib patch)
   * debian/rules:
     - Run setup.py with current python version only.
@@ -14,7 +15,7 @@ urlgrabber (3.1.0-6) unstable; urgency=low
       build, as several tests fail)
   * Bump standards version to 3.8.4 (no additional changes needed).
 
- -- Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>  Mon, 21 Jun 2010 14:14:57 +0200
+ -- Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>  Mon, 21 Jun 2010 18:15:38 +0200
 
 urlgrabber (3.1.0-5) unstable; urgency=low
 
