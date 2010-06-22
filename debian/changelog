@@ -1,6 +1,6 @@
 urlgrabber (3.1.0-6) unstable; urgency=low
 
-  [ Stefano Rivera]
+  [ Stefano Rivera ]
   * debian/patches/002_md5_deprecation.dpatch:
     Use hashlib instead of deprecated md5 functions. Thanks to Michael Bienia
     from Ubuntu (Closes: #517993)
