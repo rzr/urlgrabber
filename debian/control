@@ -12,7 +12,7 @@ XS-Python-Version: >= 2.5
 
 Package: python-urlgrabber
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, python-pycurl
 Provides: ${python:Provides}
 Description: A high-level cross-protocol url-grabber
  urlgrabber dramatically simplifies the fetching of files. It is designed to
