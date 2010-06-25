@@ -1,14 +1,18 @@
 This package was debianized by Anand Kumria <wildfire@progsoc.org> on
 Sun, 9 Oct 2005 13:06:55 +1000.
 
-It was downloaded from <http://urlgrabber.baseurl.org/download/>
+It was originally downloaded from <http://linux.duke.edu/projects/urlgrabber/download/>
+
+It can now be downloaded from <http://urlgrabber.baseurl.org/>
 
 Upstream Authors: Michael D. Stenner <mstenner@linux.duke.edu>
 	              Ryan Tomayko <rtomayko@naeblis.cx>
-
+                  Seth Vidal <skvidal@fedoraproject.org>
 
 Copyright: © 2002-2006 Michael D. Stenner
                        Ryan Tomayko
+
+Copyright: © 2009 Red Hat Inc, pycurl code written by Seth Vidal
 
 License:
 

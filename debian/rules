@@ -9,50 +9,46 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+PYVERS = $(shell pyversions -r)
+
 configure: configure-stamp
 configure-stamp:
 	dh_testdir
 	touch configure-stamp
 
-build: patch build-stamp
+build: build-stamp
 
 build-stamp: configure-stamp
 	dh_testdir
 	python setup.py build
 ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))
 	# we should set -e, but all the tests fail.
-	for py in $(shell pyversions -r); do \
+	for py in $(PYVERS); do \
 		$$py test/runtests.py; \
 	done
 endif
 	touch build-stamp
 
-clean: clean-patched unpatch
-
-clean-patched:
+clean: 
 	dh_testdir
 	dh_testroot
 	-rm -f build-stamp configure-stamp
+	for py in $(PYVERS); do \
+		$$py setup.py clean; \
+	done
 	python setup.py clean
 	find $(CURDIR) -name "*.pyc" -exec rm -f '{}' \;
 	dh_clean
 
-patch: patch-stamp
-patch-stamp:
-	dpatch apply-all
-	dpatch cat-all >patch-stamp
-
-unpatch:
-	dpatch deapply-all
-	rm -rf patch-stamp debian/patched
-
 install: build
 	dh_testdir
 	dh_testroot
-	dh_clean -k
+	dh_prep
 	dh_installdirs
 	# Add here commands to install the package into debian/urlgrabber.
-	python setup.py install --prefix=/usr --root=$(CURDIR)/debian/python-urlgrabber
+	for py in $(PYVERS); do \
+		$$py setup.py install --prefix=/usr --root=$(CURDIR)/debian/python-urlgrabber; \
+	done
 	# remove unneeded documents installed by setup.py
 	-rm -rf $(CURDIR)/debian/python-urlgrabber/usr/share/doc/urlgrabber-3*
 
