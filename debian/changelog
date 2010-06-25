@@ -1,3 +1,13 @@
+urlgrabber (3.9.1-2) unstable; urgency=low
+
+  * Install with only the default python version to avoid unnecessary depends
+    on python2.5. Changes made to debian/rules. Closes: #587006. Thanks to
+    Stefano Rivera.  
+  * Debian files uploaded to svn repository on alioth for python modules.
+    Closes: #587004.
+
+ -- Kevin Coyner <kcoyner@debian.org>  Fri, 25 Jun 2010 01:25:25 +0000
+
 urlgrabber (3.9.1-1) unstable; urgency=low
 
   * New upstream release. The main backend was changed from from urllib2 to
