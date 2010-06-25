@@ -1,21 +1,28 @@
-urlgrabber (3.1.0-6) unstable; urgency=low
+urlgrabber (3.9.1-1) unstable; urgency=low
 
-  [ Stefano Rivera ]
-  * debian/patches/002_md5_deprecation.dpatch:
-    Use hashlib instead of deprecated md5 functions. Thanks to Michael Bienia
-    from Ubuntu (Closes: #517993)
-  * debian/{control,watch,copyright}:
-    - Update Homepage - upstream moved. (Closes: #586399)
+  * New upstream release. The main backend was changed from from urllib2 to
+    pycurl. The API is identical. Callers do not need to change anything.
+    Closes: #518436, #517993, #493251, #586400, #529752. 
   * debian/control:
-    - No longer Provides ${python:Provides}
-    - Set XS-Python-Version: >= 2.5 (as required by the hashlib patch)
-  * debian/rules:
-    - Run setup.py with current python version only.
-    - Respect nocheck in DEB_BULID_OPTIONS (although failed tests don't abort
-      build, as several tests fail)
-  * Bump standards version to 3.8.4 (no additional changes needed).
+    + Bumped standards version to 3.8.4. No changes needed.
+    + Bumped debhelper version to 7.4~.
+    + Removed build dependency on dpatch.
+    + Added build dependency on python-pycurl.
+    + Updated homepage.
+    + Set XS-Python-Version: >= 2.5
+  * Removed keepalive.py patch.
+  * Updated debian/watch for new homepage.
+  * Update homepage reference in debian/copyright. Closes: #586399. Updated
+    copyright information for additional new author Seth Vidal.
+  * Add debian/source/format file set to 3.0 (quilt).
+  * debian/rules: 
+    + Run setup.py with current python version only.
+    + Respect nocheck in DEB_BULID_OPTIONS (although failed tests don't abort
+    + Changed dh_clean -k to dh_prep to conform with debhelper version 7.
+    build, as several tests fail)
+  * Bumped debian/compat from 5 to 7.
 
- -- Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>  Mon, 21 Jun 2010 18:15:38 +0200
+ -- Kevin Coyner <kcoyner@debian.org>  Mon, 21 Jun 2010 20:36:19 +0000
 
 urlgrabber (3.1.0-5) unstable; urgency=low
 
