@@ -1,3 +1,9 @@
+urlgrabber (3.9.1-3) unstable; urgency=low
+
+  * Add Depends on python-pycurl. Closes: #587000.
+
+ -- Kevin Coyner <kcoyner@debian.org>  Fri, 25 Jun 2010 02:04:19 +0000
+
 urlgrabber (3.9.1-2) unstable; urgency=low
 
   * Install with only the default python version to avoid unnecessary depends
