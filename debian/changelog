@@ -1,3 +1,9 @@
+urlgrabber (3.9.1-5) UNRELEASED; urgency=low
+
+  * Use canonical URIs for Vcs-* fields.
+
+ -- Jakub Wilk <jwilk@debian.org>  Sun, 05 May 2013 16:04:15 +0200
+
 urlgrabber (3.9.1-4) unstable; urgency=low
 
   * Add two patches created from upstream development version. Closes: #587575. 
