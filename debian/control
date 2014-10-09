@@ -3,8 +3,8 @@ Section: python
 Priority: optional
 Maintainer: Kevin Coyner <kcoyner@debian.org>
 Uploaders: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
-Build-Depends: debhelper (>= 7.4~), python-all, python-support (>= 0.6), python-pycurl, quilt (>= 0.46-7~)
-Standards-Version: 3.8.4
+Build-Depends: debhelper (>= 7.4~), dh-python, python-all (>= 2.6.6-3~), python-pycurl, quilt (>= 0.46-7~)
+Standards-Version: 3.9.5
 Homepage: http://urlgrabber.baseurl.org/
 Vcs-Svn: svn://anonscm.debian.org/python-modules/packages/urlgrabber/trunk/
 Vcs-Browser: http://anonscm.debian.org/viewvc/python-modules/packages/urlgrabber/trunk/
@@ -12,9 +12,9 @@ XS-Python-Version: >= 2.5
 
 Package: python-urlgrabber
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, python-pycurl
+Depends: ${misc:Depends}, ${python:Depends}, python-pycurl
 Provides: ${python:Provides}
-Description: A high-level cross-protocol url-grabber
+Description: high-level URL transfer library
  urlgrabber dramatically simplifies the fetching of files. It is designed to
  be used in programs that need common (but not necessarily simple)
  url-fetching features. This package provides both a binary and a module, both
