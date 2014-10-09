@@ -1,8 +1,18 @@
-urlgrabber (3.9.1-5) UNRELEASED; urgency=low
+urlgrabber (3.10.1-1) UNRELEASED; urgency=low
 
+  [ Jakub Wilk ]
   * Use canonical URIs for Vcs-* fields.
 
- -- Jakub Wilk <jwilk@debian.org>  Sun, 05 May 2013 16:04:15 +0200
+  [ Tristan Hill ]
+  * New upstream release
+  * Drop all patches now applied upstream
+  * Add libexec patch that moves urlgrabber-ext-down script to /usr/share
+  * debian/control
+    + Switch to dh_python2
+    + Bumped standards version to 3.9.5. No changes needed.
+    + Update package description per lintian warning
+
+ -- Tristan Hill <tristan@saticed.me.uk>  Wed, 08 Oct 2014 16:39:48 +0100
 
 urlgrabber (3.9.1-4) unstable; urgency=low
 

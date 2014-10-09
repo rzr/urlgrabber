@@ -1,0 +1,26 @@
+Index: urlgrabber-3.10.1.obsolete.0.712795512591587/setup.py
+===================================================================
+--- urlgrabber-3.10.1.obsolete.0.712795512591587.orig/setup.py
++++ urlgrabber-3.10.1.obsolete.0.712795512591587/setup.py
+@@ -17,7 +17,7 @@ package_dir = {'urlgrabber':'urlgrabber'
+ scripts = ['scripts/urlgrabber']
+ data_files = [
+     ('share/doc/' + name + '-' + version, ['README','LICENSE', 'TODO', 'ChangeLog']),
+-    ('libexec', ['scripts/urlgrabber-ext-down']),
++    ('share/python-urlgrabber', ['scripts/urlgrabber-ext-down']),
+ ]
+ options = { 'clean' : { 'all' : 1 } }
+ classifiers = [
+Index: urlgrabber-3.10.1.obsolete.0.712795512591587/urlgrabber/grabber.py
+===================================================================
+--- urlgrabber-3.10.1.obsolete.0.712795512591587.orig/urlgrabber/grabber.py
++++ urlgrabber-3.10.1.obsolete.0.712795512591587/urlgrabber/grabber.py
+@@ -2042,7 +2042,7 @@ import subprocess
+ class _ExternalDownloader:
+     def __init__(self):
+         self.popen = subprocess.Popen(
+-            '/usr/libexec/urlgrabber-ext-down',
++            '/usr/share/python-urlgrabber/urlgrabber-ext-down',
+             stdin = subprocess.PIPE,
+             stdout = subprocess.PIPE,
+         )
