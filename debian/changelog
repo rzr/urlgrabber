@@ -1,0 +1,148 @@
+urlgrabber (3.9.1-4.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Add debian/patches/https-verifyhost-fix.diff taken from upstream
+    to fix https connection issues (Closes: #715416, #722191).
+
+ -- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>  Tue, 30 Dec 2014 13:13:08 +0100
+
+urlgrabber (3.9.1-4) unstable; urgency=low
+
+  * Add two patches created from upstream development version. Closes: #587575. 
+  * Changed to 3.0 quilt format:
+    + Add quilt to build-depends.
+    + Add quilt command to debian/rules.
+
+ -- Kevin Coyner <kcoyner@debian.org>  Thu, 08 Jul 2010 17:40:08 +0000
+
+urlgrabber (3.9.1-3) unstable; urgency=low
+
+  * Add Depends on python-pycurl. Closes: #587000.
+
+ -- Kevin Coyner <kcoyner@debian.org>  Fri, 25 Jun 2010 02:04:19 +0000
+
+urlgrabber (3.9.1-2) unstable; urgency=low
+
+  * Install with only the default python version to avoid unnecessary depends
+    on python2.5. Changes made to debian/rules. Closes: #587006. Thanks to
+    Stefano Rivera.  
+  * Debian files uploaded to svn repository on alioth for python modules.
+    Closes: #587004.
+
+ -- Kevin Coyner <kcoyner@debian.org>  Fri, 25 Jun 2010 01:25:25 +0000
+
+urlgrabber (3.9.1-1) unstable; urgency=low
+
+  * New upstream release. The main backend was changed from from urllib2 to
+    pycurl. The API is identical. Callers do not need to change anything.
+    Closes: #518436, #517993, #493251, #586400, #529752. 
+  * debian/control:
+    + Bumped standards version to 3.8.4. No changes needed.
+    + Bumped debhelper version to 7.4~.
+    + Removed build dependency on dpatch.
+    + Added build dependency on python-pycurl.
+    + Updated homepage.
+    + Set XS-Python-Version: >= 2.5
+  * Removed keepalive.py patch.
+  * Updated debian/watch for new homepage.
+  * Update homepage reference in debian/copyright. Closes: #586399. Updated
+    copyright information for additional new author Seth Vidal.
+  * Add debian/source/format file set to 3.0 (quilt).
+  * debian/rules: 
+    + Run setup.py with current python version only.
+    + Respect nocheck in DEB_BULID_OPTIONS (although failed tests don't abort
+    + Changed dh_clean -k to dh_prep to conform with debhelper version 7.
+    build, as several tests fail)
+  * Bumped debian/compat from 5 to 7.
+
+ -- Kevin Coyner <kcoyner@debian.org>  Mon, 21 Jun 2010 20:36:19 +0000
+
+urlgrabber (3.1.0-5) unstable; urgency=low
+
+  [ Piotr Ożarowski ]
+  * Homepage field added
+  * Rename XS-Vcs-* fields to Vcs-* (dpkg supports them now)
+
+  [ Sandro Tosi ]
+  * debian/control
+    - switch Vcs-Browser field to viewsvn
+
+  [ Jakub Wilk ]
+  * Build-depend on python-all rather than python-all-dev.
+  * Remove superfluous references to CFLAGS from debian/rules.
+  * Prepare for Python 2.6 transition (closes: #556161).
+  * Typographical fixes in debian/copyright.
+  * Bump standards version to 3.8.3 (no additional changes needed).
+  * Point to the versioned LGPL-2.1 in debian/copyright.
+  * Add README.source.
+
+ -- Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>  Sat, 14 Nov 2009 09:37:03 +0100
+
+urlgrabber (3.1.0-4) unstable; urgency=low
+
+  * Patch to have urlgrabber.keepalive.HTTPHandler use Request.get_method() to
+    determine the appropriate HTTP method. Thanks to Jakub Wilk.
+    Closes: #433724
+  * Changed maintainer e-mail to reflect new Debian account.
+  * Added dpatch as Build-Depends to debian/control.
+
+ -- Kevin Coyner <kcoyner@debian.org>  Sat, 04 Aug 2007 21:52:14 -0400
+
+urlgrabber (3.1.0-3) unstable; urgency=low
+
+  * debian/control: Added python modules packaging team to uploaders and added
+    VCS fields.
+
+ -- Kevin Coyner <kevin@rustybear.com>  Mon, 09 Apr 2007 19:27:36 -0600
+
+urlgrabber (3.1.0-2) unstable; urgency=low
+
+  * debian/control: Changed "Architecture: any" to all.
+
+ -- Kevin Coyner <kevin@rustybear.com>  Mon, 09 Apr 2007 15:20:02 -0600
+
+urlgrabber (3.1.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * New maintainer. (Closes: #418095)
+  * Added man page.
+  * Cleaned up cruft in debian/rules.
+  * Rewrote debian/copyright.
+  * Cleaned up debian/control and added homepage.
+  * Added debian/README.Debian.
+  * Added debian/postinst to clean up unneeded docs that were inappropriately
+    added in previous versions.
+  * Removed unneeded debian/pycompat file.
+
+ -- Kevin Coyner <kevin@rustybear.com>  Fri, 06 Apr 2007 22:27:03 -0400
+
+urlgrabber (2.9.9-1) unstable; urgency=low
+
+  * New upstream release
+  * Apply Ana Beatriz Guerrero Lopez's patch to
+    * Update to new Python policy (Closes: #373402)
+    * Switch to standards version 3.7.2
+    * Update to debhelper compat level 5
+  * Thanks Ana!
+
+ -- Anand Kumria <wildfire@progsoc.org>  Thu,  6 Jul 2006 09:16:37 +1000
+
+urlgrabber (2.9.7-2) unstable; urgency=low
+
+  * When I imported urlgrabber into bzr, I somehow lost a Build-Dep: on
+    python. Re-adding it so I can (Closes: #335340)
+
+ -- Anand Kumria <wildfire@progsoc.org>  Sat, 31 Dec 2005 15:34:22 +1100
+
+urlgrabber (2.9.7-1) unstable; urgency=low
+
+  * New upstream release (Closes: #344934)
+
+ -- Anand Kumria <wildfire@progsoc.org>  Sat, 31 Dec 2005 15:34:22 +1100
+
+urlgrabber (2.9.6-1) unstable; urgency=low
+
+  * Initial release (Closes: #312698)
+
+ -- Anand Kumria <wildfire@progsoc.org>  Sun,  9 Oct 2005 13:06:55 +1000
+
