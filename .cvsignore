@@ -1,7 +1,0 @@
-*.pyc
-MANIFEST
-dist
-build
-*.kdev*
-*.kateproject
-ipython.log*
