@@ -8,6 +8,10 @@
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
+
+# Don't rely on network for building
+export DEB_BUILD_OPTIONS=nocheck
+
 %:
 	dh --with quilt $@
 
