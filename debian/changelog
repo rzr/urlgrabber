@@ -1,10 +1,12 @@
-urlgrabber (3.10.1-1) UNRELEASED; urgency=low
+urlgrabber (3.10.1-0.1) unstable; urgency=low
+
+  * Non-maintainer upload
 
   [ Jakub Wilk ]
   * Use canonical URIs for Vcs-* fields.
 
   [ Tristan Hill ]
-  * New upstream release
+  * New upstream release (Closes: #747202)
   * Drop all patches now applied upstream
   * Add libexec patch that moves urlgrabber-ext-down script to /usr/share
   * debian/control
@@ -12,7 +14,13 @@ urlgrabber (3.10.1-1) UNRELEASED; urgency=low
     + Bumped standards version to 3.9.5. No changes needed.
     + Update package description per lintian warning
 
- -- Tristan Hill <tristan@saticed.me.uk>  Wed, 08 Oct 2014 16:39:48 +0100
+  [ Philippe Coval ]
+  * debian/control
+    + Bumped standards version to 3.9.6. No changes needed.
+  * debian/rules
+    + disable online tests (Closes: #830113, #586684)
+
+ -- Philippe Coval <rzr@gna.org>  Thu, 14 Jul 2016 14:11:42 +0200
 
 urlgrabber (3.9.1-4) unstable; urgency=low
 
