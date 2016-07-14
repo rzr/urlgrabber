@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Kevin Coyner <kcoyner@debian.org>
 Uploaders: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
 Build-Depends: debhelper (>= 7.4~), dh-python, python-all (>= 2.6.6-3~), python-pycurl, quilt (>= 0.46-7~)
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: http://urlgrabber.baseurl.org/
 Vcs-Svn: svn://anonscm.debian.org/python-modules/packages/urlgrabber/trunk/
 Vcs-Browser: http://anonscm.debian.org/viewvc/python-modules/packages/urlgrabber/trunk/
